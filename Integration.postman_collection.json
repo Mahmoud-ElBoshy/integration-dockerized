@@ -1,0 +1,437 @@
+{
+	"info": {
+		"_postman_id": "86a490f1-9260-435e-9055-29b4b73d32c6",
+		"name": "Integration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27484960"
+	},
+	"item": [
+		{
+			"name": "http://integration.test/gateway/pay/shift4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "amount",
+							"value": "301",
+							"type": "text"
+						},
+						{
+							"key": "currency",
+							"value": "EUR",
+							"type": "text"
+						},
+						{
+							"key": "cardNumber",
+							"value": "4012000100000007",
+							"type": "text"
+						},
+						{
+							"key": "expYear",
+							"value": "2025",
+							"type": "text"
+						},
+						{
+							"key": "expMonth",
+							"value": "04",
+							"type": "text"
+						},
+						{
+							"key": "cvv",
+							"value": "232",
+							"type": "text"
+						},
+						{
+							"key": "holder",
+							"value": "Mahmoud El Boshy",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://integration.test/gateway/pay/aci",
+					"protocol": "http",
+					"host": [
+						"integration",
+						"test"
+					],
+					"path": [
+						"gateway",
+						"pay",
+						"aci"
+					]
+				},
+				"description": "### HTTP POST /gateway/pay/{aci|shift4}\n\nThis endpoint is used to process a payment transaction through the **ACI** or **Shift4** gateway.\n\n#### Request Body\n\n- amount (text): The amount of the transaction.\n    \n- currency (text): The currency of the transaction.\n    \n- cardNumber (text): The card number for the payment.\n    \n- expYear (text): The expiration year of the card.\n    \n- expMonth (text): The expiration month of the card.\n    \n- cvv (text): The CVV code of the card.\n    \n- holder (text): The name of the cardholder.\n    \n\nNote: all parameter is **requiered**\n\n#### Response\n\nThe response is in JSON format with the following schema:\n\n``` json\n{\n  \"transactionId\": \"\",\n  \"dateCreated\": \"\",\n  \"amount\": 0,\n  \"currency\": \"\",\n  \"cardBin\": \"\",\n  \"system\": \"\"\n}\n\n ```\n\n- transactionId (string): The unique identifier for the transaction.\n    \n- dateCreated (string): The date and time when the transaction was created.\n    \n- amount (number): The amount of the transaction.\n    \n- currency (string): The currency of the transaction.\n    \n- cardBin (string): The BIN (Bank Identification Number) of the card used for the transaction.\n    \n- system (string): The system or platform used to process the transaction.\n    \n\n#### Example Response\n\n``` json\n{\n  \"transactionId\": \"\",\n  \"dateCreated\": \"\",\n  \"amount\": 0,\n  \"currency\": \"\",\n  \"cardBin\": \"\",\n  \"system\": \"\"\n}\n\n ```"
+			},
+			"response": [
+				{
+					"name": "http://integration.test/gateway/pay/shift4",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "amount",
+									"value": "301",
+									"type": "text"
+								},
+								{
+									"key": "currency",
+									"value": "EUR",
+									"type": "text"
+								},
+								{
+									"key": "cardNumber",
+									"value": "4012000100000007",
+									"type": "text"
+								},
+								{
+									"key": "expYear",
+									"value": "2025",
+									"type": "text"
+								},
+								{
+									"key": "expMonth",
+									"value": "04",
+									"type": "text"
+								},
+								{
+									"key": "cvv",
+									"value": "232",
+									"type": "text"
+								},
+								{
+									"key": "holder",
+									"value": "Mahmoud El Boshy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://integration.test/gateway/pay/shift45",
+							"protocol": "http",
+							"host": [
+								"integration",
+								"test"
+							],
+							"path": [
+								"gateway",
+								"pay",
+								"shift45"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 13 Apr 2025 11:48:37 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q PHP/8.1.10"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Invalid payment system\"\n}"
+				},
+				{
+					"name": "http://integration.test/gateway/pay/shift4",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "amount",
+									"value": "301",
+									"type": "text"
+								},
+								{
+									"key": "currency",
+									"value": "EUR",
+									"type": "text"
+								},
+								{
+									"key": "cardNumber",
+									"value": "4012000100000007",
+									"type": "text"
+								},
+								{
+									"key": "expYear",
+									"value": "2025",
+									"type": "text"
+								},
+								{
+									"key": "expMonth",
+									"value": "04",
+									"type": "text"
+								},
+								{
+									"key": "cvv",
+									"value": "232",
+									"type": "text"
+								},
+								{
+									"key": "holder",
+									"value": "Mahmoud El Boshy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://integration.test/gateway/pay/shift4",
+							"protocol": "http",
+							"host": [
+								"integration",
+								"test"
+							],
+							"path": [
+								"gateway",
+								"pay",
+								"shift4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 13 Apr 2025 11:49:06 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q PHP/8.1.10"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"transactionId\": \"char_UgbMOkOdPuoYvmopwFo3rpJI\",\n    \"dateCreated\": \"2025-04-13 11:49:07\",\n    \"amount\": 301,\n    \"currency\": \"EUR\",\n    \"cardBin\": \"401200\",\n    \"system\": \"shift4\"\n}"
+				},
+				{
+					"name": "http://integration.test/gateway/pay/shift4",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "amount",
+									"value": "301",
+									"type": "text"
+								},
+								{
+									"key": "currency",
+									"value": "EUR",
+									"type": "text"
+								},
+								{
+									"key": "cardNumber",
+									"value": "4012000100000007",
+									"type": "text"
+								},
+								{
+									"key": "expYear",
+									"value": "2025",
+									"type": "text"
+								},
+								{
+									"key": "expMonth",
+									"value": "04",
+									"type": "text"
+								},
+								{
+									"key": "cvv",
+									"value": "232",
+									"type": "text"
+								},
+								{
+									"key": "holder",
+									"value": "Mahmoud El Boshy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://integration.test/gateway/pay/aci",
+							"protocol": "http",
+							"host": [
+								"integration",
+								"test"
+							],
+							"path": [
+								"gateway",
+								"pay",
+								"aci"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 13 Apr 2025 11:49:30 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.54 (Win64) OpenSSL/1.1.1q PHP/8.1.10"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"transactionId\": \"8ac7a4a296256bb901962efbbc2a593e\",\n    \"dateCreated\": \"2025-04-13 11:49:32\",\n    \"amount\": 301,\n    \"currency\": \"EUR\",\n    \"cardBin\": \"401200\",\n    \"system\": \"aci\"\n}"
+				}
+			]
+		}
+	]
+}
