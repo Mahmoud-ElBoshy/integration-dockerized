@@ -2,7 +2,7 @@
 
 ## git clone this rep.
 ## composer install
-## Build the Docker images:
+## Build the Docker images with this command
 ## docker compose build --no-cache --pull
-## Start the project!
+## Start the project with this command
 ## docker compose up -d
